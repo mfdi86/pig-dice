@@ -8,7 +8,7 @@ function Player(name, score) {
 Player.prototype.tallyScore = function() {
     var tally = 0;
   if (this.score !== 1, 0) {
-    //add number to "your score"
+    //add number to "your-score" (with append or +)
   }
 }
 
@@ -20,7 +20,7 @@ var playerB = new Player("player B", 0);
 // Player A turn
 // roll a die
 // if (roll === 1 ){
-// turn over, no points
+// turn over, no points added, subtract points in tally
 // }
 // else {
 //  add currentRollPoints to currentRoundScore
@@ -43,9 +43,9 @@ $(document).ready(function() {
     event.preventDefault();
 
 
-  var result = Math.floor(Math.random() * 7);
+  var result = Math.floor(Math.random() * 6 +1);
     console.log(result);
-    $("#output").append(result);
+    $("#output").text(result);
     });
 
   $("form#hold").submit(function(event) {
